@@ -168,27 +168,29 @@
                     data: data,
                     dataType: "json",
                     success: function (response) {
-                        //console.log(response);
-                        if(response.status == 400){
-                            $('#update_err_list').html('');
-                            $('#update_err_list').addClass('alert alert-danger');
-                            $.each(response.errors, function (key, err_value) { 
-                                $('#update_err_list').append('<li>'+err_value+'</li>');
-                            });
+                        console.log(response);
+                        // if(response.status == 400){
+                        //     $('#update_err_list').html('');
+                        //     $('#update_err_list').addClass('alert alert-danger');
+                        //     $.each(response.errors, function (key, err_value) { 
+                        //         $('#update_err_list').append('<li>'+err_value+'</li>');
+                        //     });
                             
-                        }else if(response.status == 404){
-                            $('#update_err_list').html('');
-                            $('#success_message').addClass('alert alert-success');
-                            $('#success_message').text(response.message);
-                        }else{
-                            $('#update_err_list').html('');
-                            $('#success_message').html('');
-                            $('#success_message').addClass('alert alert-success');
-                            $('#success_message').text(response.message);
+                        // }
+                        // else if(response.status == 404){
+                        //     $('#update_err_list').html('');
+                        //     $('#success_message').addClass('alert alert-success');
+                        //     $('#success_message').text(response.message);
+                        // }
+                        // else{
+                        //     $('#update_err_list').html('');
+                        //     $('#success_message').html('');
+                        //     $('#success_message').addClass('alert alert-success');
+                        //     $('#success_message').text(response.message);
 
-                            $('#EditStudentModal').modal('hide');
-                            fetchstudent();
-                        }
+                        //     $('#EditStudentModal').modal('hide');
+                        //     fetchstudent();
+                        // }
                     }
                 });
             });

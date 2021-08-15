@@ -22,4 +22,4 @@ Route::get('students' , [StudentController::class, 'index']);
 Route::post('student' , [StudentController::class, 'store']);
 Route::get('fetch-students' , [StudentController::class, 'fetchstudents']);
 Route::get('edit-student/{id}' , [StudentController::class, 'edit']);
-Route::get('update-student/{id}' , [StudentController::class, 'update']);
+Route::put('update-student/{id}' , [StudentController::class, 'update']);

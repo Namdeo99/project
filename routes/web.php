@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,9 @@ Route::post('student' , [StudentController::class, 'store']);
 Route::get('fetch-students' , [StudentController::class, 'fetchstudents']);
 Route::get('edit-student/{id}' , [StudentController::class, 'edit']);
 Route::put('update-student/{id}' , [StudentController::class, 'update']);
+
+Route::get('/employee' , [EmployeeController::class, 'index']);
+Route::post('/employee/save', [EmployeeController::class, 'store'])->name('employee.save');
+
+//Route::resource('employee' , [EmployeeController::class, 'index']);
+//Route::resource('employee', 'EmployeeController');

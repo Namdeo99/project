@@ -70,8 +70,8 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->course}}</td>
-                            <td><a href=""class="btn btn-primary  btn-sm">Edit</a></td>
-                            <td><a href=""class="btn btn-danger  btn-sm">Delete</a></td>
+                            <td><a href="" type="button" value="{{$item->id}}" class="btn btn-primary  btn-sm editbtn">Edit</a></td>
+                            <td><a href="" type="button" value="{{$item->id}}" class="btn btn-danger  btn-sm deletebtn">Delete</a></td>
                         </tr>
                     @endforeach
                     
@@ -83,4 +83,12 @@
 
 
 
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            
+        });
+    </script>
 @endsection

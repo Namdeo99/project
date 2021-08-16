@@ -16,7 +16,8 @@ class EmployeeController extends Controller
     public function index()
     {
         //
-        return view('employee');
+        $result['data'] = Employee::all();
+        return view('employee', $result);
     }
 
     /**
@@ -47,7 +48,7 @@ class EmployeeController extends Controller
         $emp->course = $req->input('course');
         $emp->save();
 
-        return view('/employee');
+        return redirect('/employee');
         // 
     }
 

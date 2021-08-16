@@ -42,11 +42,45 @@
 </div>
 
 
-
-<div class="card-header">
-    <h4>Employee
-        <a href="#" data-bs-toggle="modal" data-bs-target="#AddEmployeeModal" class="btn btn-primary float-end btn-sm">Add Employee</a>
-    </h4>
+<div class="card">
+    <div class="card-header">
+        <h4>Employee
+            <a href="#" data-bs-toggle="modal" data-bs-target="#AddEmployeeModal" class="btn btn-primary float-end btn-sm">Add Employee</a>
+        </h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    @foreach($data as $item)
+                        <tr>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->email}}</td>
+                            <td>{{$item->phone}}</td>
+                            <td>{{$item->course}}</td>
+                            <td><a href=""class="btn btn-primary  btn-sm">Edit</a></td>
+                            <td><a href=""class="btn btn-danger  btn-sm">Delete</a></td>
+                        </tr>
+                    @endforeach
+                    
+                
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
 
 @endsection

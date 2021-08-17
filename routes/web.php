@@ -32,5 +32,7 @@ Route::get('/edit-employee/{id}', [EmployeeController::class, 'edit']);
 Route::put('/update-employee', [EmployeeController::class, 'update']);
 Route::delete('/delete-employee', [EmployeeController::class, 'destroy']);
 
+//Route::livewire('show', 'ShowPosts');
+
 //Route::resource('employee' , [EmployeeController::class, 'index']);
 //Route::resource('employee', 'EmployeeController');

@@ -48,7 +48,8 @@ class EmployeeController extends Controller
         $emp->course = $req->input('course');
         $emp->save();
 
-        return redirect('/employee');
+        //return redirect('/employee');
+        return redirect()->back()->with('status','added');
         // 
     }
 
@@ -71,19 +72,37 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = Employee::find($id);
+        return response()->json([
+            'status' => 200,
+            'employee' => $employee,
+        ]);
+
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storeturnrage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req)
     {
         //
+        $emp_id = $req->input('emp_id');
+
+        $emp = Employee::find($emp_id);
+
+        $emp->name = $req->input('name');
+        $emp->email = $req->input('email');
+        $emp->phone = $req->input('phone');
+        $emp->course = $req->input('course');
+        $emp->update();
+
+        //return redirect('/employee');
+        return redirect()->back()->with('status','update');
+
     }
 
     /**
@@ -92,8 +111,13 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req)
     {
         //
+        $emp_id = $req->input('emp_delete_id');
+
+        $emp = Employee::find($emp_id);
+        $emp->delete();
+        return redirect()->back()->with('status','delete');
     }
 }

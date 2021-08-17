@@ -28,6 +28,9 @@ Route::put('update-student/{id}' , [StudentController::class, 'update']);
 
 Route::get('/employee' , [EmployeeController::class, 'index']);
 Route::post('/employee/save', [EmployeeController::class, 'store'])->name('employee.save');
+Route::get('/edit-employee/{id}', [EmployeeController::class, 'edit']);
+Route::put('/update-employee', [EmployeeController::class, 'update']);
+Route::delete('/delete-employee', [EmployeeController::class, 'destroy']);
 
 //Route::resource('employee' , [EmployeeController::class, 'index']);
 //Route::resource('employee', 'EmployeeController');

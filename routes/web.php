@@ -17,6 +17,11 @@ use App\Http\Controllers\EmployeeController;
 */
 
 Route::get('/', function () {
+    
+
+    $user = user::find(1);
+    User::find(1)->notify(new TaskCompleted)->delay(1000);
+
     return view('welcome');
 });
 

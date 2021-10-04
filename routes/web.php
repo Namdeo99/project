@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Controller;
 
 
 /*
@@ -19,11 +20,17 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/', function () {
     
 
-    $user = user::find(1);
-    User::find(1)->notify(new TaskCompleted)->delay(1000);
+    // $user = user::find(1);
+    // User::find(1)->notify(new TaskCompleted)->delay(1000);
 
     return view('welcome');
 });
+
+//notification route here
+
+Route::get('/fcm' , [Controller::class, 'index']);
+Route::get('/send-notification' , [Controller::class, 'sendNotification']);
+//end notification route here
 
 Route::get('students' , [StudentController::class, 'index']);
 Route::post('student' , [StudentController::class, 'store']);
